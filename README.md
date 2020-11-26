@@ -1,7 +1,7 @@
 # pycarfac: A Cython wrapper for the ccarfac library
 
 This is just a Cython wrapper for [ccarfac](https://github.com/analogouscircuit/ccarfac), 
-a simple C implementation of Richard Lyon's CARFAC model of the auditory periphery. The python
+a simple C implementation of Richard Lyon's CARFAC model of the auditory periphery. The Python
 wrapping makes the library suitable for use in, for example, machine learning data processing pipelines.  
 
 There is a simple makefile, tested on x86 Linux (requires Cython and C compliation framework). Note that you
@@ -18,4 +18,4 @@ values for each auditory filter.
 The function `carfac_sai` takes a NAP and generates a series of stabilized auditory images.  Usage of this function
 is also demonstrated in pycarfac_test.py.
 
-This is just "graduate student code."  Feel free to use, but do so at your own risk.
+This is just "grad student code."  Feel free to use, but do so at your own risk.
