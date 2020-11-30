@@ -1,6 +1,8 @@
 # pycarfac: A Cython wrapper for the ccarfac library
 
-This is just a Cython wrapper for [ccarfac](https://github.com/analogouscircuit/ccarfac), 
+![sample nap](/images/nap.png)
+
+This is a Python/Cython wrapper for [ccarfac](https://github.com/analogouscircuit/ccarfac), 
 a simple C implementation of Richard Lyon's CARFAC model of the auditory periphery. The Python
 wrapping makes the library suitable for use in, for example, machine learning data processing pipelines.  
 
@@ -16,6 +18,6 @@ This function will return a neural activity pattern (NAP) matrix as well as a se
 values for each auditory filter.
 
 The function `carfac_sai` takes a NAP and generates a series of stabilized auditory images.  Usage of this function
-is also demonstrated in pycarfac_test.py.
+is also demonstrated in pycarfac_test.py. The SAI functionality is fairly bare bones.
 
-This is just "grad student code."  Feel free to use, but do so at your own risk.
+Offered without any kind of warranty.  Feel free to use, but do so at your own risk. 
