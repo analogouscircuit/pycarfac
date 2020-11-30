@@ -97,7 +97,7 @@ if __name__=="__main__":
     signal *= 0.1
 
     ## Generate NAP
-    nap, channel_f_vals = pyc.carfac_nap(signal, fs, b=0.01)
+    nap, channel_f_vals = pyc.carfac_nap(signal, fs, b=0.01, num_sections=50)
     num_sections = nap.shape[0]
 
     ## Generate SAI
@@ -105,7 +105,10 @@ if __name__=="__main__":
 
     ## Plot Results
     fig = plt.figure()
-    p = 0.01 # offset scaling factor
+    ax = fig.get_axes()
+    plt.xlabel("Time (s)", fontsize=12)
+    plt.ylabel("CF (Hz)", fontsize=12)
+    p = 0.05 # offset scaling factor
     skip_step = 4
     ytick_vals = np.arange(num_sections)*p
     ytick_vals = ytick_vals[::skip_step]
