@@ -94,21 +94,21 @@ if __name__=="__main__":
     np.random.seed(0)
     signal = sin_complex(freqs, dur, fs, phase=phase)
     signal *= damped_env(T_env, tau_env, num_samps, fs)
-    signal *= 0.1
+    signal *= 0.75
 
     ## Generate NAP
-    nap, channel_f_vals = pyc.carfac_nap(signal, fs, b=0.01, num_sections=50)
+    nap, channel_f_vals = pyc.carfac_nap(signal, fs, b=0.01, num_sections=40)
     num_sections = nap.shape[0]
 
     ## Generate SAI
     sai, frames_t, delays_t = pyc.carfac_sai(nap, fs)
 
     ## Plot Results
-    fig = plt.figure()
+    fig = plt.figure(figsize=(9,6))
     ax = fig.get_axes()
     plt.xlabel("Time (s)", fontsize=12)
     plt.ylabel("CF (Hz)", fontsize=12)
-    p = 0.05 # offset scaling factor
+    p = 0.10 # offset scaling factor
     skip_step = 4
     ytick_vals = np.arange(num_sections)*p
     ytick_vals = ytick_vals[::skip_step]
